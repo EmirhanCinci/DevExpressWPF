@@ -1,0 +1,242 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Windows penceresi yönetimi ile alakalı olan stillendirmesi -->
+    <Style x:Key="windowState" TargetType="Border">
+        <Setter Property="Panel.ZIndex" Value="1"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Grid.Column" Value="1"/>
+        <Setter Property="Margin" Value="0 5 5 0"/>
+    </Style>
+
+    <!-- Windows pencersini kontrol eden butonların stillendirmesi -->
+    <Style x:Key="imgButton" TargetType="Button">
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Offset="0" Color="#ffffff"/>
+                            <GradientStop Offset="1" Color="#000000"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Windows penceresi içerisindeki resimlerin stillendirmesi -->
+    <Style x:Key="windowImg" TargetType="Image">
+        <Setter Property="Width" Value="15"/>
+        <Setter Property="Height" Value="15"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Opacity" Value="0.7"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- LogIn ekranının sol tarafının stillendirmesi -->
+    <Style x:Key="leftMenu" TargetType="Border">
+        <Setter Property="CornerRadius" Value="0,10,10,0"/>
+        <Setter Property="Grid.Column" Value="1"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Offset="0" Color="#FF4B2B"/>
+                    <GradientStop Offset="1" Color="#FF416C"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Başlıkların stillendirmesi -->
+    <Style x:Key="titleTextWhite" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#ffffff"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="36"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <!-- Başlıkların stillendirmesi -->
+    <Style x:Key="titleTextBlack" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#000000"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="36"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <!-- Normal yazıların stillendirmesi -->
+    <Style x:Key="normalTextWhite" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#ffffff"/>
+        <Setter Property="Margin" Value="0 15 0 15"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <!-- Normal yazıların stillendirmesi -->
+    <Style x:Key="normalTextBlack" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#000000"/>
+        <Setter Property="Margin" Value="0 15 0 15"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <!-- Normal butonların stillendirmesi -->
+    <Style x:Key="normalButtonBlack" TargetType="Button">
+        <Setter Property="Foreground" Value="#000000"/>
+        <Setter Property="Margin" Value="0 15 0 15"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Offset="0" Color="#FF4B2B"/>
+                                        <GradientStop Offset="1" Color="#FF416C"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- LogIn ekranının sağ tarafının stillendirmesi -->
+    <Style x:Key="rightMenu" TargetType="Border">
+        <Setter Property="CornerRadius" Value="10,0,0,10"/>
+        <Setter Property="Background" Value="#ffffff"/>
+        <Setter Property="Grid.Column" Value="0"/>
+    </Style>
+
+    <!-- Inputların düzenini sağlayan stillendirmesi -->
+    <Style x:Key="inputBorder" TargetType="Border">
+        <Setter Property="BorderBrush" Value="#acb0af"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Margin" Value="70 7"/>
+        <Setter Property="CornerRadius" Value="5"/>
+    </Style>
+
+    <!-- TextBoxların stillendirmesi -->
+    <Style x:Key="textBox" TargetType="Control">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Grid.Column" Value="1"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Margin" Value="10 0 0 0"/>
+        <Setter Property="Foreground" Value="#878787"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <!-- TextBoxların içerisindeki place holderin stillendirmesi -->
+    <Style x:Key="textHint" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Grid.Column" Value="1"/>
+        <Setter Property="Panel.ZIndex" Value="1"/>
+        <Setter Property="Margin" Value="10 0 0 0"/>
+        <Setter Property="Foreground" Value="#acb0af"/>
+    </Style>
+
+    <!-- Giriş butonun stillendirmesi -->
+    <Style x:Key="signInButton" TargetType="Button">
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Foreground" Value="#ffffff"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="btnBorder" CornerRadius="20"
+                Background="{TemplateBinding Background}"
+                Width="{TemplateBinding Width}">
+                        <ContentPresenter x:Name="ContentPresenter" Focusable="False"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              Margin="{TemplateBinding Padding}"
+                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                              RecognizesAccessKey="True"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Offset="0" Color="#FF4B2B"/>
+                    <GradientStop Offset="1" Color="#FF416C"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Sosyal medya butonların stillendirmesi -->
+    <Style x:Key="socialButton" TargetType="Button">
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#9e9e9e"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding BorderThickness}" />
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Offset="0" Color="#ffffff"/>
+                                        <GradientStop Offset="1" Color="#000000"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Sosyal medya ikonların stillendirmesi -->
+    <Style x:Key="socialImg" TargetType="Image">
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Height" Value="30"/>
+    </Style>
+    
+</ResourceDictionary>
