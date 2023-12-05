@@ -6,10 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" 
     xmlns:local="clr-namespace:PurchasingProject.WpfUi"
-    mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300">
-    <UserControl.DataContext>
-        <local:MainViewModel/>
-    </UserControl.DataContext>
+    mc:Ignorable="d" Background="Aqua" d:Width="300" Height="500" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
     <Grid>
+        <TextBlock Text="Ana Sayfa"></TextBlock>
     </Grid>
 </UserControl>

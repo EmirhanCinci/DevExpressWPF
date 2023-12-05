@@ -3,41 +3,28 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:local="clr-namespace:PurchasingProject.WpfUi"
-        xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui" xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar" xmlns:dxca="http://schemas.devexpress.com/winfx/2008/xaml/carousel" x:Class="HomeWindow"
+        xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui" xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar" xmlns:dxca="http://schemas.devexpress.com/winfx/2008/xaml/carousel" xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion" x:Class="HomeWindow"
         x:Name="HomeWindow" WindowStartupLocation="CenterScreen" WindowStyle="None" 
         Background="Black" ResizeMode="NoResize" AllowsTransparency="True"
         Title="HomeWindow" Height="450" Width="800">
     <Grid>
-
         <dxwui:HamburgerMenu x:Name="hamburgerMenu" Header="ABC HOLDING" PaneBackground="#0c1e35" Loaded="hamburgerMenu_Loaded">
             <dxwui:HamburgerMenu.BottomBarItems>
                 <dxwui:HamburgerMenuBottomBarNavigationButton Content="Settings" GlyphHeight="16" GlyphWidth="16"/>
                 <dxwui:HamburgerMenuBottomBarNavigationButton Content="About" GlyphHeight="16" GlyphWidth="16"/>
             </dxwui:HamburgerMenu.BottomBarItems>
             <dxwui:HamburgerMenu.Content>
-                <dxwui:NavigationFrame>
-                    <StackPanel Orientation="Horizontal" Height="43" Background="#0c1e35" VerticalAlignment="Top">
-                        <Button x:Name="minimize" Style="{StaticResource imgButton}" Click="minimize_Click">
-                            <Image Source="/Images/minimize.png" Style="{StaticResource windowImg}"/>
-                        </Button>
-                        <Button x:Name="maximize" Style="{StaticResource imgButton}" Click="maximize_Click">
-                            <Image Source="/Images/maximize.png" Style="{StaticResource windowImg}"/>
-                        </Button>
-                        <Button x:Name="close" Style="{StaticResource imgButton}" Click="close_Click">
-                            <Image Source="/Images/close.png" Style="{StaticResource windowImg}"/>
-                        </Button>
-                    </StackPanel>
+                <dxwui:NavigationFrame Content="/Views/MainView.xaml">
                 </dxwui:NavigationFrame>
             </dxwui:HamburgerMenu.Content>
-            <dxwui:HamburgerMenuNavigationButton Content="Ana Sayfa" GlyphHeight="16" GlyphWidth="16" IsSelected="True"/>
-            <dxwui:HamburgerMenuNavigationButton Content="Şirketler" GlyphHeight="16" GlyphWidth="16"/>
-            <dxwui:HamburgerMenuNavigationButton Content="Departmanlar" GlyphHeight="16" GlyphWidth="16"/>
-            <dxwui:HamburgerMenuNavigationButton Content="Personeller" GlyphHeight="16" GlyphWidth="16"/>
-            <dxwui:HamburgerMenuNavigationButton Content="Kategoriler" GlyphHeight="16" GlyphWidth="16"/>
-            <dxwui:HamburgerMenuNavigationButton Content="Döviz Türleri" GlyphHeight="16" GlyphWidth="16"/>
-            <dxwui:HamburgerMenuNavigationButton Content="Tedarikçiler" GlyphHeight="16" GlyphWidth="16"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="homeButton" Content="Ana Sayfa" Glyph="/Images/home.png" GlyphHeight="16" GlyphWidth="16" Click="homeButton_Click" IsSelected="True"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="companyButton" Content="Şirketler" Glyph="/Images/company.png" GlyphHeight="16" GlyphWidth="16" Click="companyButton_Click"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="departmentButton" Content="Departmanlar" Glyph="/Images/department.png" GlyphHeight="16" GlyphWidth="16" Click="departmentButton_Click"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="personsButton" Content="Personeller" Glyph="/Images/home.png" GlyphHeight="16" GlyphWidth="16" Click="personsButton_Click"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="categoryButton" Content="Kategoriler" Glyph="/Images/category.png" GlyphHeight="16" GlyphWidth="16" Click="categoryButton_Click"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="currencyButton" Content="Döviz Türleri" Glyph="/Images/exchange.png" GlyphHeight="16" GlyphWidth="16" Click="currencyButton_Click"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="supplierButton" Content="Tedarikçiler" Glyph="/Images/supplier.png" GlyphHeight="16" GlyphWidth="16" Click="supplierButton_Click"/>
             <dxwui:HamburgerMenuHyperlinkButton Content="Support" NavigateUri="https://www.devexpress.com/Support/"/>
         </dxwui:HamburgerMenu>
-
     </Grid>
 </Window>
